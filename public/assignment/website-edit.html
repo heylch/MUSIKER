@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Websites</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--<link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel = "stylesheet"/>-->
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="lch lch-list">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a href="website-list.html">
+            <span class="glyphicon glyphicon-chevron-left pull-left"></span>
+        </a>
+
+        <span class="navbar-header pull-left">
+            <a class="navbar-brand lch-list" href="#"><b>Edit Website</b></a>
+        </span>
+        <a href="website-list.html">
+            <span class="glyphicon glyphicon-ok pull-right"></span>
+        </a>
+
+    </nav>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <div class="navbar-footer">
+                <a href="profile.html">
+                    <span class="glyphicon glyphicon-user pull-right"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <ul class="list-group lch-list">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 visible-lg lch-split-view-left">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class = "row">
+                                <div class = "col-xs-9">
+                                    <a href="page-list.html">
+                                        Japanese Animes
+                                    </a> </div>
+                                <div class = "col-xs-3">
+                                    <a href="website-edit.html">
+                                        <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </li>
+                        <li class="list-group-item">
+                            <div class = "row">
+                                <div class = "col-xs-9">
+                                    <a href="#">
+                                        Disney Cartoons
+                                    </a> </div>
+                                <div class = "col-xs-3">
+                                    <a href="website-edit.html">
+                                        <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class = "row">
+                                <div class = "col-xs-9">
+                                    <a href="#">
+                                        Fairy Tales
+                                    </a> </div>
+                                <div class = "col-xs-3">
+                                    <a href="website-edit.html">
+                                        <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class = "row">
+                                <div class = "col-xs-9">
+                                    <a href="#">
+                                        Chinese Mithology
+                                    </a> </div>
+                                <div class = "col-xs-3">
+                                    <a href="website-edit.html">
+                                        <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <div class="col-xs-12 col-lg-9 lch-split-view-right">
+
+                    <label for="name">Name</label>
+                    <input name="firstName"
+                           placeholder="Japanese Animes"
+                           type="text"
+                           class="form-control"
+                           id="name"/>
+
+                    <label for="description">Description</label>
+                    <textarea name="description"
+                              rows="5"
+                              placeholder="Japanese Animation or (as it’s affectionately known in the US) “Anime” is a style of animation that has taken the US by storm. Known for exaggerated features (such as big eyes, oddly colored hair, etc) popular anime movies portray fantastic stories (usually about some supernatural power) that is not just beautiful to watch but also entertaining."
+                              class="form-control"
+                              id="description"></textarea>
+
+                    <a href="website-list.html" class="btn btn-default btn-danger btn-block">Delete</a>
+                    <a href="website-list.html" class="btn btn-default black btn-block">Cancel</a>
+
+                </div>
+            </div>
+        </div>
+    </ul>
+
+</div>
+</body>

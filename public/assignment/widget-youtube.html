@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Websites</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--<link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel = "stylesheet"/>-->
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="lch-widget">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a href="widget-list.html">
+            <span class="glyphicon glyphicon-chevron-left pull-left"></span>
+        </a>
+
+        <span class="navbar-header pull-left">
+            <a class="navbar-brand lch-list" href="#"><b>Widget Video Edit</b></a>
+        </span>
+
+        <a href="widget-list.html">
+            <span class="glyphicon glyphicon-ok pull-right"></span>
+        </a>
+
+
+    </nav>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <div class="navbar-footer">
+                <a href="profile.html">
+                    <span class="glyphicon glyphicon-user pull-right"></span>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="col-xs-12 ">
+
+        <label for="name">Name</label>
+        <input name="firstName"
+               placeholder="Name"
+               type="text"
+               class="form-control"
+               id="name"/>
+
+        <label for="text">Text</label>
+        <input name="text"
+               placeholder="Video Info"
+               type="text"
+               class="form-control"
+               id="text"/>
+
+        <label for="url">URL</label>
+        <input name="url"
+               type="url"
+               placeholder="https://www.youtube.com/embed/e5shfIY4Kxk"
+               class="form-control"
+               id="url"/>
+
+        <label for="width">Width</label>
+        <input name="width"
+               type="number"
+               placeholder= "100%"
+               class="form-control"
+               id="width"/>
+
+        <label for="upload">Upload</label>
+        <input name="upload" multiple
+               type = "file"
+               class="form-control"
+               id="upload"/>
+
+        <a href="#" class="btn btn-default btn-primary btn-block">Upload Video</a>
+        <a href="widget-list.html" class="btn btn-default btn-danger btn-block">Delete</a>
+        <a href="widget-list.html" class="btn btn-default black btn-block">Cancel</a>
+
+    </div>
+
+
+</div>
+</body>

@@ -1,0 +1,170 @@
+input {
+    margin-bottom: 5px;
+}
+
+body{
+    padding-top: 60px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+.lch-list{
+    padding-top: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: rgb(46, 125, 205);
+}
+
+.lch-page.navbar-default{
+
+    background-color: rgba(5, 9, 23, 0.71);
+}
+
+.navbar-default {
+    background-color: #228dc2;
+    border-color: #e7e7e7;
+}
+
+
+.lch-list.navbar-brand{
+    float: left;
+    height: 50px;
+    padding: 15px 5px;
+    font-size: 20px;
+    line-height: 20px;
+    margin-left: 0px;
+}
+
+.lch-list.glyphicon-cog{
+    color: rgb(46, 125, 205);
+    padding-top: 0px;
+    /*margin-right: -10px;*/
+}
+
+.starter-template {
+    padding: 40px 15px;
+    text-align: center;
+}
+
+.btn{
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.navbar-default .navbar-brand{
+    color: white;
+}
+
+.glyphicon{
+    color: white;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.glyphicon-plus.pull-right{
+    margin-right: 50px;
+}
+
+.glyphicon-user.pull-right{
+    margin-right: 50px;
+}
+
+.glyphicon-ok.pull-right{
+    margin-right: 50px;
+}
+
+.glyphicon-chevron-left.pull-left{
+    margin-left: 10px;
+}
+.pull-left{
+    margin-left: 10px;
+}
+
+.list-group-item{
+    margin-left: -30px;
+    margin-right: -30px;
+}
+.lch-split-view-right{
+    color: black;
+}
+
+label[for = description]{
+    margin-top: 20px;
+}
+
+.list-group-item{
+    border-style: hidden;
+    margin-bottom: 10px;
+}
+.row{
+    margin-top: 10px;
+}
+.col-lg-9{
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.container-fluid .lch-widget .widget-video{
+    padding-bottom: 30px;
+}
+.container-fluid .lch-widget .widget-video .widget-tools{
+    background-color: black;
+    position: absolute;
+    right: 95px;
+    border-bottom-left-radius: 10px;
+    color: white;
+}
+
+.container-fluid .lch-widget .widget-image .widget-tools{
+    background-color: black;
+    position: absolute;
+    right: 95px;
+    border-bottom-left-radius: 10px;
+    color: white;
+}
+
+.container-fluid .lch-widget .widget-image .image{
+    padding-bottom: 20%;
+}
+
+.container-fluid .lch-widget .widget-heading .widget-tools{
+    background-color: white;
+    position: absolute;
+    right: 95px;
+    border-bottom-left-radius: 10px;
+}
+
+.container-fluid .lch-widget .widget-heading .widget-tools .glyphicon{
+    color: black;
+ }
+
+.container-fluid .lch-widget .widget-heading .blue .widget-tools .glyphicon{
+    color: deepskyblue;
+}
+
+/*.container-fluid .lch-widget .widget-heading .glyphicon{*/
+    /*color: black;*/
+    /*padding-right: 5px;*/
+/*}*/
+
+.container-fluid .lch-widget .widget-paragraph .glyphicon{
+    color: rgb(93, 162, 131);
+    padding-right: 3px;
+    font-size: 14px;
+}
+.blue{
+    color: deepskyblue;
+}
+.container-fluid .lch-widget .chooser-list{
+    margin-left: -60px;
+}
+
+.lch-widget .navbar-default{
+    background-color: rgba(40, 43, 7, 0.43);
+}
+.btn-default.black{
+    background-color: black;
+    color: white;
+}
+.lch-profile.navbar-header{
+    margin-left: 75px;
+}
