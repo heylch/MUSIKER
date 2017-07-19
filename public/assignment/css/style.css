@@ -24,21 +24,23 @@ body{
     background-color: #228dc2;
     border-color: #e7e7e7;
 }
-
-
-.lch-list.navbar-brand{
-    float: left;
-    height: 50px;
-    padding: 15px 5px;
-    font-size: 20px;
-    line-height: 20px;
-    margin-left: 0px;
+.navbar-header{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 60px;
 }
+
+.navbar-footer{
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 60px;
+}
+
 
 .lch-list.glyphicon-cog{
     color: rgb(46, 125, 205);
     padding-top: 0px;
-    /*margin-right: -10px;*/
+
 }
 
 .starter-template {
@@ -57,33 +59,10 @@ body{
 
 .glyphicon{
     color: white;
-    font-size: 20px;
-    padding-top: 10px;
+    font-size: 14px;
+
 }
 
-.glyphicon-plus.pull-right{
-    margin-right: 50px;
-}
-
-.glyphicon-user.pull-right{
-    margin-right: 50px;
-}
-
-.glyphicon-ok.pull-right{
-    margin-right: 50px;
-}
-
-.glyphicon-chevron-left.pull-left{
-    margin-left: 10px;
-}
-.pull-left{
-    margin-left: 10px;
-}
-
-.list-group-item{
-    margin-left: -30px;
-    margin-right: -30px;
-}
 .lch-split-view-right{
     color: black;
 }
@@ -141,10 +120,7 @@ label[for = description]{
     color: deepskyblue;
 }
 
-/*.container-fluid .lch-widget .widget-heading .glyphicon{*/
-    /*color: black;*/
-    /*padding-right: 5px;*/
-/*}*/
+
 
 .container-fluid .lch-widget .widget-paragraph .glyphicon{
     color: rgb(93, 162, 131);
@@ -154,9 +130,7 @@ label[for = description]{
 .blue{
     color: deepskyblue;
 }
-.container-fluid .lch-widget .chooser-list{
-    margin-left: -60px;
-}
+
 
 .lch-widget .navbar-default{
     background-color: rgba(40, 43, 7, 0.43);
