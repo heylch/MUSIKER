@@ -1,0 +1,84 @@
+
+<div  class="lch-profile" >
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><b>Profile</b></a>
+                <a href="profile.view.client.html" class="navbar-brand pull-right">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <div class="navbar-footer">
+                <a href="profile.view.client.html" class="navbar-brand pull-right">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class = "container-fluid">
+        <label for="firstname">Firstname</label>
+        <input name = "firstname"
+               ng-model="model.user.firstName"
+               type="text"
+               class = "form-control"
+               id="firstname"/>
+
+        <label for="lastname">Lastname</label>
+        <input name = "lastname"
+               ng-model="model.user.lastName"
+               placeholder="Terry"
+               type="text"
+               class = "form-control"
+               id="lastname"/>
+
+        <label for="username">Username</label>
+        <input name = "username"
+               ng-model="model.user.username"
+               value = "Kevin"
+               type="text"
+               readonly
+               class = "form-control"
+               id="username"/>
+
+        <label for="email">Email</label>
+        <input name = "email"
+               placeholder="kevin@gmail.com"
+               type = "email"
+               class = "form-control"
+               id="email"/>
+
+        <label for="dob">Date of Birth</label>
+        <input name = "dob"
+               type = "date"
+               class = "form-control"
+               id="dob"/>
+
+        <a class="btn btn-default btn-primary btn-block"
+           href="#!/user/{{model.userId}}/website"
+           role="button">Websites</a>
+
+        <a class="btn btn-default btn-danger btn-block"
+           href="#!/login"
+           role="button">Logout</a>
+
+        <a class="btn btn-default btn-danger btn-block"
+           ng-click= "model.update()"
+           role="button">Update</a>
+
+        <a class="btn btn-default btn-danger btn-block"
+           ng-click= "model.unregister()"
+           role="button">Unregister</a>
+
+
+    </div>
+</div>
+
+

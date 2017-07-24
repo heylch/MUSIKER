@@ -1,0 +1,37 @@
+
+    <div>
+        <div ng-show = "vm.welcomeUser" class="alert alert-info">
+            Welcome back {{vm.welcomeUser.username}}
+        </div>
+
+        <div class="alert alert-danger" ng-show="model.errorMessage">
+            {{model.errorMessage}}
+        </div>
+
+        <div class = "container-fluid">
+            <h2>Login</h2>
+            <label for="username">Username</label>
+            <input name = "username"
+                   ng-model="model.user.username"
+                   placeholder="Kevin"
+                   type="text"
+                   class = "form-control"
+                   id="username"/>
+
+            <label for="password">Password</label>
+            <input name = "password"
+                   ng-model="model.user.password"
+                   type = "password"
+                   placeholder="12345@kevin"
+                   class = "form-control"
+                   id="password"/>
+
+            <a class="btn btn-default btn-primary btn-block"
+               ng-click="model.login(model.user)">Login</a>
+
+            <a class="btn btn-default btn-success btn-block"
+               href="#!/register">Register</a>
+
+        </div>
+    </div>
+

@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <!--<link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel = "stylesheet"/>-->
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
+
 
 <div class = "container-fluid">
+
+    <div ng-show="vm.error" class="alert alert-danger">
+        {{vm.error}}
+    </div>
+
     <h2>Register</h2>
     <label for="username">Username</label>
     <input name = "username"
+           ng-model="vm.user.username"
            placeholder="Kevin"
            type="text"
            class = "form-control"
@@ -20,6 +17,7 @@
 
     <label for="password">Password</label>
     <input name = "password"
+           ng-model="vm.user.password"
            type = "password"
            placeholder="12345@kevin"
            class = "form-control"
@@ -27,18 +25,19 @@
 
     <label for="password2">Verify Password</label>
     <input name = "password2"
+           ng-model="vm.user.password2"
            type = "password"
            placeholder="12345@kevin"
            class = "form-control"
            id="password2"/>
 
     <a class="btn btn-default btn-primary btn-block"
-       href="profile.html"
+       ng-click="model.registerUser(user)"
        role="button">Register</a>
 
     <a class="btn btn-default btn-danger btn-block"
-       href="login.html"
+       href="#!/login"
        role="button">Cancel</a>
 
 </div>
-</body>
+

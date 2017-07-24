@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Websites</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <!--<link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel = "stylesheet"/>-->
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
 
-<div class="lch lch-list">
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="website-list.html" class="navbar-brand pull-left">
+                <a href="website-list.view.client.html" class="navbar-brand pull-left">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
-                <a class="navbar-brand" href="#"><b>Edit Website</b></a>
-                <a href="website-list.html" class="navbar-brand pull-right">
+                <a class="navbar-brand" href="#"><b>New Website</b></a>
+                <a href="website-list.view.client.html" class="navbar-brand pull-right">
                     <span class="glyphicon glyphicon-ok"></span>
                 </a>
             </div>
@@ -28,7 +17,7 @@
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="navbar-footer">
-                <a href = "profile.html" class="navbar-brand pull-right">
+                <a href = "../../user/templates/profile.view.client.html" class="navbar-brand pull-right">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
@@ -40,15 +29,16 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-3 visible-lg lch-split-view-left">
+
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div class = "row">
-                                <div class = "col-xs-9">
-                                    <a href="page-list.html">
-                                        Japanese Animes
-                                    </a> </div>
+                                <a href="../../page/templates/page-list.view.client.html">
+                                    <div class = "col-xs-9">Japanese Animes</div>
+                                </a>
+
                                 <div class = "col-xs-3">
-                                    <a href="website-edit.html">
+                                    <a href="website-edit.view.client.html">
                                         <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
                                     </a>
                                 </div>
@@ -58,12 +48,11 @@
                         </li>
                         <li class="list-group-item">
                             <div class = "row">
-                                <div class = "col-xs-9">
-                                    <a href="#">
-                                        Disney Cartoons
-                                    </a> </div>
+                                <a href="#">
+                                    <div class = "col-xs-9">Disney Cartoons</div>
+                                </a>
                                 <div class = "col-xs-3">
-                                    <a href="website-edit.html">
+                                    <a href="website-edit.view.client.html">
                                         <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
                                     </a>
                                 </div>
@@ -72,12 +61,11 @@
 
                         <li class="list-group-item">
                             <div class = "row">
-                                <div class = "col-xs-9">
-                                    <a href="#">
-                                        Fairy Tales
-                                    </a> </div>
+                                <a href="#">
+                                    <div class = "col-xs-9">Fairy Tales</div>
+                                </a>
                                 <div class = "col-xs-3">
-                                    <a href="website-edit.html">
+                                    <a href="website-edit.view.client.html">
                                         <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
                                     </a>
                                 </div>
@@ -86,12 +74,11 @@
 
                         <li class="list-group-item">
                             <div class = "row">
-                                <div class = "col-xs-9">
-                                    <a href="#">
-                                        Chinese Mithology
-                                    </a> </div>
+                                <a href="#">
+                                    <div class = "col-xs-9">Chinese Mithology</div>
+                                </a>
                                 <div class = "col-xs-3">
-                                    <a href="website-edit.html">
+                                    <a href="website-edit.view.client.html">
                                         <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
                                     </a>
                                 </div>
@@ -102,11 +89,12 @@
                     </ul>
 
                 </div>
-                <div class="col-xs-12 col-lg-9 lch-split-view-right">
+                <div class="col-lg-9 lch-split-view-right">
 
                     <label for="name">Name</label>
                     <input name="firstName"
-                           placeholder="Japanese Animes"
+                           placeholder="Name"
+                           ng-model="vm.website.name"
                            type="text"
                            class="form-control"
                            id="name"/>
@@ -114,17 +102,12 @@
                     <label for="description">Description</label>
                     <textarea name="description"
                               rows="5"
-                              placeholder="Japanese Animation or (as it’s affectionately known in the US) “Anime” is a style of animation that has taken the US by storm. Known for exaggerated features (such as big eyes, oddly colored hair, etc) popular anime movies portray fantastic stories (usually about some supernatural power) that is not just beautiful to watch but also entertaining."
+                              placeholder="Description"
                               class="form-control"
                               id="description"></textarea>
-
-                    <a href="website-list.html" class="btn btn-default btn-danger btn-block">Delete</a>
-                    <a href="website-list.html" class="btn btn-default black btn-block">Cancel</a>
 
                 </div>
             </div>
         </div>
     </ul>
 
-</div>
-</body>

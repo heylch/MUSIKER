@@ -1,0 +1,46 @@
+
+
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="../../user/templates/profile.view.client.html" class="navbar-brand pull-left">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="navbar-brand" href="#"><b>Websites</b></a>
+                <a href= "#!/user/{{model.userId}}/website/new" class="navbar-brand pull-right">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <div class="navbar-footer">
+                <a href = "../../user/templates/profile.view.client.html" class="navbar-brand pull-right">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+<div class="container-fluid">
+    <ul class="list-group lch-list">
+        <li ng-repeat="website in model.websites" class="list-group-item">
+            <div class = "row">
+                <a href="#!/user/{{model.userId}}/website/{{website._id}}/page">
+                    <div class = "col-xs-12">{{website.name}}</div>
+                </a>
+                <a href="#!/user/{{model.userId}}/website/{{website._id}}">
+                    <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
+                </a>
+
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+

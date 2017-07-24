@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Websites</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <!--<link href="../vendor/bootstrap/dist/css/bootstrap.min.css" rel = "stylesheet"/>-->
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
+
 
     <nav class="lch-widget navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="widget-list.html" class="navbar-brand pull-left">
+                <a href="widget-list.view.client.html" class="navbar-brand pull-left">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
                 <a class="navbar-brand" href="#"><b>Widget</b></a>
@@ -23,7 +14,7 @@
     <nav class="lch-widget navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="navbar-footer">
-                <a href = "profile.html" class="navbar-brand pull-right">
+                <a href = "../../user/templates/profile.view.client.html" class="navbar-brand pull-right">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
@@ -35,7 +26,7 @@
             <ul class="chooser-list">
                 <li class="list-group-item">
                     <div class="row">
-                        <a href="widget-heading.html">Header</a>
+                        <a ng-click="model.createWidget('HEADING')">Header</a>
                     </div>
                 </li>
 
@@ -47,7 +38,7 @@
 
                 <li class="list-group-item">
                     <div class="row">
-                        <a href="#">HTML</a>
+                        <a ng-click="model.createWidget('HTML')">HTML</a>
                     </div>
                 </li>
 
@@ -71,13 +62,13 @@
 
                 <li class="list-group-item">
                     <div class="row">
-                        <a href="widget-image.html">Image</a>
+                        <a ng-click="model.createWidget('IMAGE')">Image</a>
                     </div>
                 </li>
 
                 <li class="list-group-item">
                     <div class="row">
-                        <a href="widget-youtube.html">YouTube</a>
+                        <a ng-click="model.createWidget('YOUTUBE')">YouTube</a>
                     </div>
                 </li>
 
@@ -100,6 +91,3 @@
     </div>
 
 
-
-
-</body>

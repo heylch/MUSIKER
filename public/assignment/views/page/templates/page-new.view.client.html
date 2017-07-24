@@ -1,0 +1,75 @@
+
+
+<div class="lch lch-page">
+
+    <nav class="lch-page navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-brand pull-left">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="navbar-brand" href="#"><b>New Page</b></a>
+                <a ng-click="model.createPage(model.page)" class="navbar-brand pull-right">
+                    <span class="glyphicon glyphicon-ok"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="lch-page navbar navbar-default navbar-fixed-bottom">
+        <div class="container-fluid">
+            <div class="navbar-footer">
+                <a href = "#!/user/{{model.userId}}" class="navbar-brand pull-right">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <ul class="list-group lch-list">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 visible-lg lch-split-view-left">
+                    <ul class="list-group">
+                        <li ng-repeat="page in model.pages" class="list-group-item">
+                            <div class = "row">
+                                <a href="../../widget/templates/widget-list.view.client.html">
+                                    <div class = "col-xs-12">{{page.name}}</div>
+                                </a>
+                                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
+                                    <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
+                                </a>
+
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-xs-12 col-lg-9 lch-split-view-right">
+
+                    <label for="name">Name</label>
+                    <input name="name"
+                           ng-model="model.page.name"
+                           placeholder="Page Name"
+                           type="text"
+                           class="form-control"
+                           id="name"/>
+
+                    <label for="title">Title</label>
+                    <input name="title"
+                           placeholder="Page Title"
+                           type="text"
+                           class="form-control"
+                           id="title"/>
+
+                    <a ng-click="model.createPage(model.page)" class="btn btn-default btn-success btn-block">Create</a>
+                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="btn btn-default black btn-block">Cancel</a>
+
+                </div>
+            </div>
+        </div>
+    </ul>
+
+</div>
+
