@@ -8,9 +8,9 @@
                 <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-brand pull-left">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
-                <a class="navbar-brand" href="#"><b>Edit Video</b></a>
-                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-brand pull-right">
-                    <span class="glyphicon glyphicon-ok"></span>
+                <a class="navbar-brand"><b>Edit/Create Video</b></a>
+                <a ng-click="model.updateWidget(model.youtubeEdit)" class="navbar-brand pull-right">
+                    <span class="glyphicon glyphicon-ok btn"></span>
                 </a>
             </div>
         </div>
@@ -19,7 +19,7 @@
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="navbar-footer">
-                <a href = "../../user/templates/profile.view.client.html" class="navbar-brand pull-right">
+                <a href = "#!/user/{{model.userId}}" class="navbar-brand pull-right">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
@@ -44,7 +44,7 @@
 
         <label for="url">URL</label>
         <input name="url"
-               ng-model="model.widget.url"
+               ng-model="model.youtubeEdit.url"
                type="url"
                placeholder="https://www.youtube.com/embed/e5shfIY4Kxk"
                class="form-control"
@@ -52,7 +52,7 @@
 
         <label for="width">Width</label>
         <input name="width"
-               ng-model="model.widget.width"
+               ng-model="model.youtubeEdit.width"
                type="text"
                placeholder= "100%"
                class="form-control"
@@ -64,10 +64,10 @@
                class="form-control"
                id="upload"/>
 
-        <a href="#" class="btn btn-default btn-primary btn-block">Upload Video</a>
-        <a ng-click="model.updateWidget()" class="btn btn-default btn-success btn-block">Update</a>
-        <a href="../templates/widget-list.view.client.html" class="btn btn-default btn-danger btn-block">Delete</a>
-        <a href="../templates/widget-list.view.client.html" class="btn btn-default black btn-block">Cancel</a>
+        <a  class="btn btn-default btn-primary btn-block">Upload Video</a>
+        <a ng-click="model.updateWidget(model.youtubeEdit)" class="btn btn-default btn-success btn-block">Update</a>
+        <a ng-click="model.deleteWidget()" class="btn btn-default btn-danger btn-block">Delete</a>
+        <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="btn btn-default black btn-block">Cancel</a>
 
     </div>
 

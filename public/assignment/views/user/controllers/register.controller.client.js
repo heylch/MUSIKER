@@ -8,21 +8,21 @@
 
     function registerController(userService, $location) {
         var vm = this;
-
-        vm.registerUser = registerUser;
+        vm.createUser = createUser;
 
         function init() {
 
         }
         init();
 
-        function registerUser(user) {
+        function createUser(user) {
             var _user = userService.findUserByUsername(user.username);
             if(!_user) {
-                var user = userService.registerUser(user);
-                $location.url("/profile/"+user._id);
+                userService.createUser(user);
+                vm.user = userService.findUserByUsername(user.username);
+                $location.url("/user/"+vm.user._id);
             } else {
-                model.error = "User already exists";
+                vm.error = "User already exists";
             }
         }
     }

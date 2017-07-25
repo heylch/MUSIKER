@@ -62,7 +62,7 @@
 
         function updateUser(userId,user){
             for (var u in users) {
-                if (users[u]._Id === userId) {
+                if (users[u]._id === userId) {
                     users[u] = user;
                 }
             }
@@ -70,7 +70,7 @@
 
         function deleteUser(userId){
             for (var u in users) {
-                if (users[u]._Id === userId) {
+                if (users[u]._id === userId) {
                     users.splice(u,1);
                 }
             }

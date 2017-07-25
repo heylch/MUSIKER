@@ -8,9 +8,9 @@
                 <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-brand pull-left">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
-                <a class="navbar-brand" href="#"><b>Edit {{model.page.name}}</b></a>
-                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-brand pull-right">
-                    <span class="glyphicon glyphicon-ok"></span>
+                <a class="navbar-brand"><b>Edit {{model.page.name}}</b></a>
+                <a ng-click="model.updatePage(model.pageEdit)"  class="navbar-brand pull-right">
+                    <span class="glyphicon glyphicon-ok btn"></span>
                 </a>
             </div>
         </div>
@@ -34,13 +34,16 @@
                     <ul class="list-group">
                         <li ng-repeat="page in model.pages" class="list-group-item">
                             <div class = "row">
-                                <a href="../../widget/templates/widget-list.view.client.html">
-                                    <div class = "col-xs-12">{{page.name}}</div>
-                                </a>
-                                <a href="page-edit.view.client.html">
-                                    <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
-                                </a>
-
+                                <div class="col-lg-6 col-md-6 col-xs-6">
+                                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
+                                        <div class = "col-xs-12">{{page.name}}</div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-xs-6">
+                                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
+                                        <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
+                                    </a>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -49,7 +52,7 @@
 
                     <label for="name">Name</label>
                     <input name="name"
-                           ng-model="model.page.name"
+                           ng-model="model.pageEdit.name"
                            type="text"
                            placeholder="Name"
                            class="form-control"
@@ -61,7 +64,16 @@
                            type="text"
                            class="form-control"
                            id="title"/>
-                    <a ng-click="model.updatePage(model.page)" class="btn btn-default btn-danger btn-block">Update</a>
+
+                    <label for="description">Description</label>
+                    <textarea name="description"
+                              ng-model = "model.pageEdit.description"
+                              rows="5"
+                              placeholder="Description"
+                              class="form-control"
+                              id="description"></textarea>
+
+                    <a ng-click="model.updatePage(model.pageEdit)" class="btn btn-default btn-success btn-block">Update</a>
                     <a ng-click="model.deletePage()" class="btn btn-default btn-danger btn-block">Delete</a>
                     <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="btn btn-default black btn-block">Cancel</a>
 

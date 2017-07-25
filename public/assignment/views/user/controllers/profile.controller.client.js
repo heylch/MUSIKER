@@ -8,23 +8,24 @@ angular
     .controller("profileController", profileController);
 
     
-    function profileController($routeParams, userService) {
+    function profileController($routeParams, $location, userService) {
         var vm = this;
         vm.userId = $routeParams["uid"];
 
         vm.updateUser = updateUser;
-        vm.unregister = unregister;
+        vm.deleteUser = deleteUser;
         function init() {
             vm.user = userService.findUserById(vm.userId);
         }
         init();
 
         function updateUser(user) {
-            userService.updateUser(user._Id,user);
+            userService.updateUser(user._id,user);
         }        
         
-        function unregister() {
-            
+        function deleteUser() {
+            userService.deleteUser(vm.userId);
+            $location.url('/login');
         }
         
 

@@ -8,7 +8,7 @@
                     <a href="#!/user/{{model.userId}}/website" class="navbar-brand pull-left">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
-                    <a class="navbar-brand" href="#"><b>Pages</b></a>
+                    <a class="navbar-brand"><b>Pages</b></a>
                     <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/new" class="navbar-brand pull-right">
                         <span class="glyphicon glyphicon-plus"></span>
                     </a>
@@ -30,12 +30,16 @@
         <ul class="list-group lch-list">
             <li ng-repeat="page in model.pages" class="list-group-item">
                 <div class = "row">
-                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
-                        <div class = "col-xs-12">{{page.name}}</div>
-                    </a>
-                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
-                        <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
-                    </a>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
+                            <div class = "col-xs-12">{{page.name}}</div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+                        <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
+                            <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
+                        </a>
+                    </div>
 
                 </div>
             </li>

@@ -1,3 +1,4 @@
 <div class="widget-html">
-    <p>{{model.htmlText(widget)}}</p>
+    <!--<p>{{model.htmlText(widget)}}</p>-->
+    <a ng-bind-html="model.trustHtmlContent(widget.text)"></a>
 </div>

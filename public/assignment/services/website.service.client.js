@@ -58,7 +58,7 @@
                     websites[w] = website;
             }
         }
-        function deleteWebsite(websiteId,website) {
+        function deleteWebsite(websiteId) {
             for (var w in websites){
                 if (websites[w]._id === websiteId)
                     websites.splice(w,1);

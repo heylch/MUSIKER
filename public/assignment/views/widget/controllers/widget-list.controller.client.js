@@ -12,15 +12,16 @@
         vm.userId = $routeParams["uid"];
         vm.websiteId = $routeParams["wid"];
         vm.pageId = $routeParams["pid"];
-        vm.youtubeLink = youtubeLink;
+        vm.trustYoutubeLink = trustYoutubeLink;
         vm.htmlText = htmlText;
+        vm.trustHtmlContent = trustHtmlContent;
 
         function init() {
             vm.widgets = widgetService.findWidgetsByPageId(vm.pageId);
         }
         init();
 
-        function youtubeLink(widget){
+        function trustYoutubeLink(widget){
             var link = "https://www.youtube.com/embed/";
             var widgetLink = widget.url.split("/");
             link = link.concat(widgetLink[widgetLink.length -1] );
@@ -31,6 +32,10 @@
             var length = widget.text.length;
             var text = widget.text.substr(3,length-7);
             return text;
+        }
+
+        function trustHtmlContent(html) {
+            return $sce.trustAsHtml(html);
         }
     }
 

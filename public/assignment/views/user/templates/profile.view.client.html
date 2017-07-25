@@ -4,9 +4,9 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><b>Profile</b></a>
-                <a href="profile.view.client.html" class="navbar-brand pull-right">
-                    <span class="glyphicon glyphicon-ok"></span>
+                <a class="navbar-brand"><b>Profile</b></a>
+                <a ng-click="model.updateUser(model.user)" class="navbar-brand pull-right">
+                    <span class="glyphicon glyphicon-ok btn"></span>
                 </a>
             </div>
         </div>
@@ -16,7 +16,7 @@
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="navbar-footer">
-                <a href="profile.view.client.html" class="navbar-brand pull-right">
+                <a href="#!/user/{{model.userId}}" class="navbar-brand pull-right">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
@@ -65,16 +65,17 @@
            href="#!/user/{{model.userId}}/website"
            role="button">Websites</a>
 
-        <a class="btn btn-default btn-danger btn-block"
+        <a class="btn btn-default btn-success btn-block"
+           ng-click= "model.updateUser(model.user)"
+           role="button">Update</a>
+
+
+        <a class="btn btn-default btn-danger black btn-block"
            href="#!/login"
            role="button">Logout</a>
 
         <a class="btn btn-default btn-danger btn-block"
-           ng-click= "model.update()"
-           role="button">Update</a>
-
-        <a class="btn btn-default btn-danger btn-block"
-           ng-click= "model.unregister()"
+           ng-click= "model.deleteUser()"
            role="button">Unregister</a>
 
 

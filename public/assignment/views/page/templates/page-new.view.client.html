@@ -8,9 +8,9 @@
                 <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-brand pull-left">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
-                <a class="navbar-brand" href="#"><b>New Page</b></a>
+                <a class="navbar-brand"><b>New Page</b></a>
                 <a ng-click="model.createPage(model.page)" class="navbar-brand pull-right">
-                    <span class="glyphicon glyphicon-ok"></span>
+                    <span class="glyphicon glyphicon-ok btn"></span>
                 </a>
             </div>
         </div>
@@ -34,17 +34,19 @@
                     <ul class="list-group">
                         <li ng-repeat="page in model.pages" class="list-group-item">
                             <div class = "row">
-                                <a href="../../widget/templates/widget-list.view.client.html">
-                                    <div class = "col-xs-12">{{page.name}}</div>
-                                </a>
-                                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
-                                    <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
-                                </a>
-
+                                <div class="col-lg-6 col-md-6 col-xs-6">
+                                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}/widget">
+                                        <div class = "col-xs-12">{{page.name}}</div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-xs-6">
+                                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{page._id}}">
+                                        <span class = "lch-list pull-right glyphicon glyphicon-cog "> </span>
+                                    </a>
+                                </div>
                             </div>
                         </li>
                     </ul>
-
                 </div>
                 <div class="col-xs-12 col-lg-9 lch-split-view-right">
 
@@ -62,6 +64,14 @@
                            type="text"
                            class="form-control"
                            id="title"/>
+
+                    <label for="description">Description</label>
+                    <textarea name="description"
+                              ng-model = "model.page.description"
+                              rows="5"
+                              placeholder="Description"
+                              class="form-control"
+                              id="description"></textarea>
 
                     <a ng-click="model.createPage(model.page)" class="btn btn-default btn-success btn-block">Create</a>
                     <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="btn btn-default black btn-block">Cancel</a>

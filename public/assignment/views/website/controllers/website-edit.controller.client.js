@@ -17,11 +17,17 @@
         function init() {
             vm.websites = websiteService.findWebsitesByUser(vm.userId);
             vm.website = websiteService.findWebsiteById(vm.websiteId);
+            vm.websiteEdit = {
+                "_id" : vm.website._id,
+                "name" : vm.website.name,
+                "developerId" : vm.website.developerId,
+                "description" : vm.website.description
+            }
         }
         init();
 
-        function updateWebsite() {
-            websiteService.updateWebsite(vm.websiteId, vm.website);
+        function updateWebsite(website) {
+            websiteService.updateWebsite(vm.websiteId, website);
             $location.url('/user/' +vm.userId +'/website');
         }
 

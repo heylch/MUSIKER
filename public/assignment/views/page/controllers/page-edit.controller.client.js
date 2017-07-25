@@ -15,9 +15,17 @@
         vm.updatePage = updatePage;
         vm.deletePage = deletePage;
 
+
         function init() {
             vm.pages = pageService.findPageByWebsiteId(vm.websiteId);
             vm.page = pageService.findPageById(vm.pageId);
+            vm.pageEdit = {
+                "_id" : vm.page._id,
+                "name" : vm.page.name,
+                "websiteId" : vm.page.websiteId,
+                "description" : vm.page.description
+            }
+
         }
         init();
 

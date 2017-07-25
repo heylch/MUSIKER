@@ -6,9 +6,9 @@
                    class="navbar-brand pull-left">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
-                <a class="navbar-brand" href="#"><b>Edit HTML</b></a>
-                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-brand pull-right">
-                    <span class="glyphicon glyphicon-ok"></span>
+                <a class="navbar-brand"><b>Edit/Create HTML</b></a>
+                <a ng-click="model.updateWidget(model.htmlEdit)" class="navbar-brand pull-right">
+                    <span class="glyphicon glyphicon-ok btn"></span>
                 </a>
             </div>
         </div>
@@ -17,7 +17,7 @@
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container-fluid">
             <div class="navbar-footer">
-                <a href = "../../user/templates/profile.view.client.html" class="navbar-brand pull-right">
+                <a href = "#!/user/{{model.userId}}" class="navbar-brand pull-right">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
@@ -35,15 +35,15 @@
 
         <label for="text">Text</label>
         <input name="text"
-               ng-model="model.widget.text"
+               ng-model="model.htmlEdit.text"
                type="text"
                value="The latest Episode of Dragon Ball Super is out!!!"
                class="form-control"
                id="text"/>
 
-        <a ng-click="model.updateWidget()" class="btn btn-default btn-success btn-block">Update</a>
-        <a href="../templates/widget-list.view.client.html" class="btn btn-default btn-danger btn-block">Delete</a>
-        <a href="../templates/widget-list.view.client.html" class="btn btn-default black btn-block">Cancel</a>
+        <a ng-click="model.updateWidget(model.htmlEdit)" class="btn btn-default btn-success btn-block">Update</a>
+        <a ng-click="model.deleteWidget()" class="btn btn-default btn-danger btn-block">Delete</a>
+        <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="btn btn-default black btn-block">Cancel</a>
 
     </div>
 </div>
