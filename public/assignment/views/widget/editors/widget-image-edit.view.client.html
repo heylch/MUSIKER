@@ -51,13 +51,16 @@
                class="form-control"
                id="url"/>
 
-        <label for="width">Width</label>
-        <input name="width"
-               ng-model="model.imageEdit.width"
-               placeholder="100%"
-               class="form-control"
-               id="width"/>
 
+        <label for="width">Width</label>
+        <select ng-model="model.imageEdit.width"
+                class="form-control"
+                id="width">
+            <option value="100%">100%</option>
+            <option value="75%">75%</option>
+            <option value="50%">50%</option>
+            <option value="25%">25%</option>
+        </select>
 
         <div>
             <label for = "upload">Upload</label>

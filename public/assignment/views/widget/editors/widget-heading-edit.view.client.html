@@ -43,12 +43,17 @@
                id="text"/>
 
         <label for="size">Size</label>
-        <input name="size"
-               ng-model="model.headingEdit.size"
-               value="3"
-               type="text"
-               class="form-control"
-               id="size"/>
+        <select ng-model="model.headingEdit.size"
+                type="text"
+                class="form-control"
+                id="size">
+            <option value="1">6</option>
+            <option value="2">5</option>
+            <option value="3">4</option>
+            <option value="4">3</option>
+            <option value="5">2</option>
+            <option value="6">1</option>
+        </select>
 
         <a ng-click="model.updateWidget(model.headingEdit)" class="btn btn-default btn-success btn-block">Update</a>
         <a ng-click="model.deleteWidget()" class="btn btn-default btn-danger btn-block">Delete</a>
