@@ -17,7 +17,10 @@
         vm.trustHtmlContent = trustHtmlContent;
 
         function init() {
-            vm.widgets = widgetService.findWidgetsByPageId(vm.pageId);
+            widgetService.findWidgetsByPageId(vm.pageId)
+                .then(function (response) {
+                    vm.widgets = response.data;
+                });
         }
         init();
 

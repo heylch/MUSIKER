@@ -15,25 +15,39 @@
         vm.userId = $routeParams["uid"];
 
         function init() {
-            vm.websites = websiteService.findWebsitesByUser(vm.userId);
-            vm.website = websiteService.findWebsiteById(vm.websiteId);
-            vm.websiteEdit = {
-                "_id" : vm.website._id,
-                "name" : vm.website.name,
-                "developerId" : vm.website.developerId,
-                "description" : vm.website.description
-            }
+             websiteService.findWebsitesByUser(vm.userId)
+                 .then(function (response) {
+                     vm.websites = response.data;
+                 });
+            websiteService.findWebsiteById(vm.websiteId)
+                .then(function (response) {
+                    vm.website = response.data;
+                    vm.websiteEdit = {
+                        "_id" : vm.website._id,
+                        "name" : vm.website.name,
+                        "developerId" : vm.website.developerId,
+                        "description" : vm.website.description
+                    }
+
+                });
+
         }
         init();
 
         function updateWebsite(website) {
-            websiteService.updateWebsite(vm.websiteId, website);
-            $location.url('/user/' +vm.userId +'/website');
+            websiteService.updateWebsite(vm.websiteId, website)
+                .then(function () {
+                    $location.url('/user/' +vm.userId +'/website');
+                });
+
         }
 
         function deleteWebsite() {
-            websiteService.deleteWebsite(vm.websiteId);
-            $location.url('/user/' +vm.userId +'/website');
+            websiteService.deleteWebsite(vm.websiteId)
+                .then(function () {
+                    $location.url('/user/' +vm.userId +'/website');
+                });
+
         }
     }
 

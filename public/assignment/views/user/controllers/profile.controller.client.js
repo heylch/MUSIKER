@@ -15,7 +15,10 @@ angular
         vm.updateUser = updateUser;
         vm.deleteUser = deleteUser;
         function init() {
-            vm.user = userService.findUserById(vm.userId);
+            userService.findUserById(vm.userId)
+                .then(function (response) {
+                    vm.user = response.data;
+                });
         }
         init();
 

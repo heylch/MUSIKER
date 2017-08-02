@@ -17,26 +17,37 @@
 
 
         function init() {
-            vm.pages = pageService.findPageByWebsiteId(vm.websiteId);
-            vm.page = pageService.findPageById(vm.pageId);
-            vm.pageEdit = {
-                "_id" : vm.page._id,
-                "name" : vm.page.name,
-                "websiteId" : vm.page.websiteId,
-                "description" : vm.page.description
-            }
-
+            pageService.findPageByWebsiteId(vm.websiteId)
+                .then(function (response) {
+                    vm.pages = response.data;
+                });
+            pageService.findPageById(vm.pageId)
+                .then(function (response) {
+                    vm.page = response.data;
+                    vm.pageEdit = {
+                        "_id" : vm.page._id,
+                        "name" : vm.page.name,
+                        "websiteId" : vm.page.websiteId,
+                        "description" : vm.page.description
+                    }
+                });
         }
         init();
 
         function updatePage(page) {
-            pageService.updatePage(vm.pageId, page);
-            $location.url('/user/' +vm.userId +'/website/'+vm.websiteId+'/page');
+            pageService.updatePage(vm.pageId, page)
+                .then(function () {
+                    $location.url('/user/' +vm.userId +'/website/'+vm.websiteId+'/page');
+                });
+
         }
 
         function deletePage() {
-            pageService.deletePage(vm.pageId);
-            $location.url('/user/' +vm.userId +'/website/'+vm.websiteId+'/page');
+            pageService.deletePage(vm.pageId)
+                .then(function () {
+                    $location.url('/user/' +vm.userId +'/website/'+vm.websiteId+'/page');
+                });
+
         }
     }
 

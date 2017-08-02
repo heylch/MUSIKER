@@ -54,21 +54,30 @@
         <label for="width">Width</label>
         <input name="width"
                ng-model="model.imageEdit.width"
-               type="text"
-               placeholder= "100%"
+               placeholder="100%"
                class="form-control"
                id="width"/>
 
-        <label for="upload">Upload</label>
-        <input name="upload" multiple
-               type = "file"
-               class="form-control"
-               id="upload"/>
 
-        <a  class="btn btn-default btn-primary btn-block">Upload Image</a>
+        <div>
+            <label for = "upload">Upload</label>
+            <form id = "upload" action="/api/upload"   method="post" enctype="multipart/form-data">
+                <input  name="myFile"    type="file" class="form-control"/>
+                <input  name="width"     value="{{model.imageEdit.width}}" style="display: none"/>
+                <input  name="userId"    value="{{model.userId}}"   style="display: none"/>
+                <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
+                <input  name="pageId"    value="{{model.pageId}}"   style="display: none"/>
+                <input  name="widgetId"  value="{{model.imageEdit._id}}"   style="display: none"/>
+                <button type="submit"    class="btn btn-block btn-primary">Upload Image</button>
+            </form>
+        </div>
+
+
+        <!--<a  class="btn btn-default btn-primary btn-block">Upload Image</a>-->
         <a ng-click="model.updateWidget(model.imageEdit)" class="btn btn-default btn-success btn-block">Update</a>
         <a ng-click="model.deleteWidget()" class="btn btn-default btn-danger btn-block">Delete</a>
         <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="btn btn-default black btn-block">Cancel</a>
+
 
     </div>
 

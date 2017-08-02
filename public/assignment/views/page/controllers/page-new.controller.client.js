@@ -14,13 +14,19 @@
         vm.createPage = createPage;
 
         function init() {
-            vm.pages = pageService.findPageByWebsiteId(vm.websiteId);
+            pageService.findPageByWebsiteId(vm.websiteId)
+                .then(function (response) {
+                    vm.pages = response.data;
+                });
         }
         init();
 
         function createPage(page) {
-            pageService.createPage(vm.websiteId,page);
-            $location.url('/user/' +vm.userId +'/website/'+vm.websiteId+'/page');
+            pageService.createPage(vm.websiteId,page)
+            .then(function () {
+                $location.url('/user/' +vm.userId +'/website/'+vm.websiteId+'/page');
+            });
+
         }
 
     }

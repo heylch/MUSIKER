@@ -18,8 +18,11 @@
         init();
 
         function createWebsite(website) {
-            websiteService.createWebsite(vm.userId,website);
-            $location.url('/user/' +vm.userId +'/website');
+            websiteService.createWebsite(vm.userId,website)
+                .then(function () {
+                    $location.url('/user/' +vm.userId +'/website');
+                });
+
         }
 
     }

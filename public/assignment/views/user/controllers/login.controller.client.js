@@ -18,14 +18,21 @@
         init();
 
         function login(user) {
-            var user = userService.findUserByCredentials(user.username, user.password);
-            if (user === null){
-                vm.errorMessage = "User not found: Unable to login";
-            }
-            else{
-                $location.url("/user/" + user._id);
+            if(!user) {
+                model.errorMessage = "User not found";
+                return;
             }
 
+            userService.findUserByCredentials(user.username, user.password)
+            .then(function (response){
+                _user = response.data;
+                if (_user === '0'){
+                    vm.errorMessage = "User not found: Unable to login";
+                }
+                else{
+                    $location.url("/user/" + _user._id);
+                }
+            });
         }
     }
 

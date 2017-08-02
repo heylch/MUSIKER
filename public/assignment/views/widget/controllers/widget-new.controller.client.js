@@ -22,9 +22,12 @@
                 "pageId" :vm.pageId
 
             };
-            widgetService.createWidget(vm.pageId,widget);
-            $location.url('/user/' + vm.userId +
-                '/website/' + vm.websiteId + '/page/'+vm.pageId+ '/widget/' + widget._id);
+            widgetService.createWidget(vm.pageId,widget)
+                .then(function () {
+                    $location.url('/user/' + vm.userId +
+                        '/website/' + vm.websiteId + '/page/'+vm.pageId+ '/widget/' + widget._id);
+                });
+
         }
     }
 
