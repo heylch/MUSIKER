@@ -34,7 +34,6 @@ function createWidget(req,res) {
 }
 
 function findAllWidgetsForPage(req,res) {
-    console.log(widgets);
     var pageId = req.params.pageId;
     var widget = [];
     for (var w in widgets){
@@ -119,7 +118,7 @@ function uploadImage(req, res) {
     }
     widget.url = '/uploads/'+filename;
 
-    var callbackUrl   = "/assignment/#/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget";
+    var callbackUrl   = "/assignment/#!/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget";
 
     res.redirect(callbackUrl);
 }

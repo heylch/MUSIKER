@@ -61,12 +61,12 @@
 
         <div>
             <label for = "upload">Upload</label>
-            <form id = "upload" action="/api/upload"   method="post" enctype="multipart/form-data">
+            <form action="/api/upload" id = "upload" method="post" enctype="multipart/form-data">
                 <input  name="myFile"    type="file" class="form-control"/>
                 <input  name="width"     value="{{model.imageEdit.width}}" style="display: none"/>
                 <input  name="userId"    value="{{model.userId}}"   style="display: none"/>
                 <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
-                <input  name="pageId"    value="{{model.pageId}}"   style="display: none"/>
+                <input  name="pageId"    value="{{model.imageEdit.pageId}}"   style="display: none"/>
                 <input  name="widgetId"  value="{{model.imageEdit._id}}"   style="display: none"/>
                 <button type="submit"    class="btn btn-block btn-primary">Upload Image</button>
             </form>
