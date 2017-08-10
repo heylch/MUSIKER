@@ -22,13 +22,16 @@
                     if(_user === "0") {
                         return userService.createUser(user)
                     } else {
-                        model.error = "User already exists";
+                        vm.error = "User already exists";
                     }
                 })
                 .then(function (response) {
-                    var _user = response.data;
-                    $location.url("/user/" + _user._id);
+                    if (response !== undefined){
+                        var _user = response.data;
+                        $location.url("/user/" + _user._id);
+                    }
                 });
+
         }
     }
 })();

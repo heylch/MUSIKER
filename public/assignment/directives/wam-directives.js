@@ -3,11 +3,11 @@
  */
 (function () {
     angular
-        .module('wbdvDirectives',[])
-        .directive("reorderWebpage", reorderWebpage);
+        .module('wamDirectives',[])
+        .directive("reorderWidget", reorderWidget);
 
 
-    function reorderWebpage($http, $routeParams) {
+    function reorderWidget($http, $routeParams) {
 
         function linkFunction(scope, element) {
             var pageId = $routeParams["pid"];

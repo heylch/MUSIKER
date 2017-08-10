@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-brand pull-left">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="navbar-brand"><b>Search Flickr</b></a>
+            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new" class="navbar-brand pull-right">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-footer">
+            <a href = "#!/user/{{model.userId}}" class="navbar-brand pull-right">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+
+
+<div class="input-group">
+    <input ng-model="searchText" placeholder="Search Image" type="text" class="form-control">
+    <span class="input-group-btn">
+        <a ng-click="model.searchPhoto(searchText)" class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+        </a>
+    </span>
+</div>
+
+<div class="row">
+    <div class="col-xs-4" ng-repeat="photo in model.photos.photo">
+        <img ng-click="model.selectPhoto(photo)"
+             ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_s.jpg"/>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <a ng-click="model.updatePhoto(model.widget)" class="btn btn-default btn-success btn-block">Update</a>
+    <a ng-click="model.cancelUpdate()" class="btn btn-default black btn-block">Cancel</a>
+</div>

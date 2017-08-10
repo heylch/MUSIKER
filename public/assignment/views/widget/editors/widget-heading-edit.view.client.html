@@ -1,30 +1,29 @@
 
-<div class="lch-widget">
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-brand pull-left">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="navbar-brand"><b>Edit/Create Header</b></a>
-                <a ng-click="model.updateWidget(model.headingEdit)" class="navbar-brand pull-right">
-                    <span class="glyphicon glyphicon-ok btn"></span>
-                </a>
-            </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget" class="navbar-brand pull-left">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="navbar-brand"><b>Edit/Create Header</b></a>
+            <a ng-click="model.updateWidget(model.headingEdit)" class="navbar-brand pull-right">
+                <span class="glyphicon glyphicon-ok btn"></span>
+            </a>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container-fluid">
-            <div class="navbar-footer">
-                <a href = "#!/user/{{model.userId}}" class="navbar-brand pull-right">
-                    <span class="glyphicon glyphicon-user"></span>
-                </a>
-            </div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+        <div class="navbar-footer">
+            <a href = "#!/user/{{model.userId}}" class="navbar-brand pull-right">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
         </div>
-    </nav>
+    </div>
+</nav>
 
+<div class="lch-widget container-fluid">
     <div class="col-xs-12 ">
 
         <label for="name">Name</label>

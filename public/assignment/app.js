@@ -3,6 +3,6 @@
  */
 (function (){
     angular
-        .module('WebAppMaker', ['ngRoute', 'wbdvDirectives']);
+        .module('WebAppMaker', ['ngRoute', 'wamDirectives', 'textAngular']);
 
 })();

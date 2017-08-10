@@ -17,15 +17,19 @@
 
         function createWidget(widgetType) {
             var widget = {
-                "_id" : (new Date()).getTime() + "",
-                "widgetType":widgetType,
-                "pageId" :vm.pageId
+
+                "type":widgetType
+                // "pageId" :vm.pageId
 
             };
             widgetService.createWidget(vm.pageId,widget)
-                .then(function () {
+                .then(function (response) {
+                    // console.log(response);
+                    var page = response.data;
+                    var widgets = page.widgets;
+                    var widgetId = widgets[widgets.length - 1];
                     $location.url('/user/' + vm.userId +
-                        '/website/' + vm.websiteId + '/page/'+vm.pageId+ '/widget/' + widget._id);
+                        '/website/' + vm.websiteId + '/page/'+vm.pageId+ '/widget/' + widgetId);
                 });
 
         }

@@ -18,6 +18,7 @@
                     vm.pages = response.data;
                 });
         }
+
         init();
     }
 

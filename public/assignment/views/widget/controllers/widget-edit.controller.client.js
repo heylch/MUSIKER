@@ -7,7 +7,7 @@
         .controller("widgetEditController", widgetEditController);
 
 
-    function widgetEditController($routeParams, $location, widgetService, $scope) {
+    function widgetEditController($routeParams, $location, widgetService) {
         var vm = this;
         vm.userId = $routeParams["uid"];
         vm.websiteId = $routeParams["wid"];
@@ -15,45 +15,110 @@
         vm.widgetId = $routeParams["wgid"];
         vm.updateWidget = updateWidget;
         vm.deleteWidget = deleteWidget;
+        vm.searchFlickr = searchFlickr;
+
 
         function init() {
             widgetService.findWidgetById(vm.widgetId)
                 .then(function (response) {
                     vm.widget = response.data;
-                    if (vm.widget.widgetType === "HEADING"){
+                    if (vm.widget.type === "HEADING"){
                         vm.headingEdit = {
                             "_id":vm.widget._id,
-                            "widgetType":vm.widget.widgetType,
+                            "_page":vm.widget._page,
+                            "type":vm.widget.type,
+                            "url":vm.widget.url,
+                            "width":vm.widget.width,
+                            "name":vm.widget.name,
+                            "placeholder":vm.widget.placeholder,
+                            "height":vm.widget.height,
+                            "rows":vm.widget.rows,
+                            "class":vm.widget.class,
+                            "icon":vm.widget.icon,
+                            "deletable":vm.widget.deletable,
+                            "formated":vm.widget.formated,
+                            "dateCreated": vm.widget.dateCreated,
                             "size":vm.widget.size,
-                            "pageId":vm.widget.pageId,
                             "text":vm.widget.text
                         }
                     }
-                    if (vm.widget.widgetType === "IMAGE"){
+                    if (vm.widget.type === "IMAGE"){
                         vm.imageEdit = {
                             "_id":vm.widget._id,
-                            "widgetType":vm.widget.widgetType,
+                            "type":vm.widget.type,
                             "width":vm.widget.width,
-                            "pageId":vm.widget.pageId,
-                            "url":vm.widget.url
+                            "_page":vm.widget._page,
+                            "url":vm.widget.url,
+                            "name":vm.widget.name,
+                            "placeholder":vm.widget.placeholder,
+                            "height":vm.widget.height,
+                            "rows":vm.widget.rows,
+                            "class":vm.widget.class,
+                            "icon":vm.widget.icon,
+                            "deletable":vm.widget.deletable,
+                            "formated":vm.widget.formated,
+                            "dateCreated": vm.widget.dateCreated,
+                            "size":vm.widget.size,
+                            "text":vm.widget.text
                         }
 
                     }
-                    if (vm.widget.widgetType === "YOUTUBE"){
+                    if (vm.widget.type === "YOUTUBE"){
                         vm.youtubeEdit = {
                             "_id":vm.widget._id,
-                            "widgetType":vm.widget.widgetType,
+                            "type":vm.widget.type,
                             "width":vm.widget.width,
-                            "pageId":vm.widget.pageId,
-                            "url":vm.widget.url
+                            "_page":vm.widget._page,
+                            "url":vm.widget.url,
+                            "name":vm.widget.name,
+                            "placeholder":vm.widget.placeholder,
+                            "height":vm.widget.height,
+                            "rows":vm.widget.rows,
+                            "class":vm.widget.class,
+                            "icon":vm.widget.icon,
+                            "deletable":vm.widget.deletable,
+                            "formated":vm.widget.formated,
+                            "dateCreated": vm.widget.dateCreated,
+                            "size":vm.widget.size,
+                            "text":vm.widget.text
                         }
                     }
-                    if (vm.widget.widgetType === "HTML"){
+                    if (vm.widget.type === "HTML"){
                         vm.htmlEdit = {
                             "_id":vm.widget._id,
-                            "widgetType":vm.widget.widgetType,
-                            "pageId":vm.widget.pageId,
-                            "text":vm.widget.text
+                            "type":vm.widget.type,
+                            "_page":vm.widget._page,
+                            "text":vm.widget.text,
+                            "name":vm.widget.name,
+                            "placeholder":vm.widget.placeholder,
+                            "height":vm.widget.height,
+                            "rows":vm.widget.rows,
+                            "class":vm.widget.class,
+                            "icon":vm.widget.icon,
+                            "deletable":vm.widget.deletable,
+                            "formated":vm.widget.formated,
+                            "dateCreated": vm.widget.dateCreated,
+                            "size":vm.widget.size,
+                            "width":vm.widget.width
+                        }
+                    }
+                    if (vm.widget.type === "TEXT"){
+                        vm.textEdit = {
+                            "_id":vm.widget._id,
+                            "type":vm.widget.type,
+                            "_page":vm.widget._page,
+                            "text":vm.widget.text,
+                            "name":vm.widget.name,
+                            "placeholder":vm.widget.placeholder,
+                            "height":vm.widget.height,
+                            "rows":vm.widget.rows,
+                            "class":vm.widget.class,
+                            "icon":vm.widget.icon,
+                            "deletable":vm.widget.deletable,
+                            "formated":vm.widget.formated,
+                            "dateCreated": vm.widget.dateCreated,
+                            "size":vm.widget.size,
+                            "width":vm.widget.width
                         }
                     }
                 });
@@ -77,8 +142,9 @@
                 });
 
         }
-        function uploadImage() {
-            
+        function searchFlickr() {
+            $location.url('/user/' + vm.userId +
+                '/website/' + vm.websiteId + '/page/'+vm.pageId+ '/widget/' + vm.widgetId + '/searchflickr');
         }
     }
 
