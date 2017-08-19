@@ -127,6 +127,11 @@ a {
   border-radius: 50%;
 }
 
+.image-circle-small{
+  width: 20%;
+  border-radius: 100%;
+}
+
 .btn-circle {
   font-size: 26px;
   width: 55px;
@@ -148,16 +153,22 @@ a {
 
 .content-section {
   padding-top: 150px;
-  padding-bottom: 150px; }
-
-.download-section {
-  color: white;
-  background: url("../img/downloads-bg.jpg") no-repeat center center scroll;
+  padding-bottom: 150px;
+  background: url("../img/background.jpg") no-repeat center center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; }
+  background-size: 100%;
+}
+
+.contact-section {
+  padding-top: 150px;
+  padding-bottom: 150px;
+  background: black;
+  color: white;
+}
+
 
 #map {
   width: 100%;

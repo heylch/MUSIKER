@@ -11,9 +11,9 @@ passport.serializeUser(serializeUser);
 passport.deserializeUser(deserializeUser);
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var googleConfig = {
-    clientID : process.env.GOOGLE_CLIENT_ID, //"1007887171981-db9d5lqrpl5s0difp3vje5dfrsnrijmi.apps.googleusercontent.com"
-    clientSecret :process.env.GOOGLE_CLIENT_SECRET, //"EjaLWYKzCsEHgH6bpG97CojL"
-    callbackURL  :process.env.GOOGLE_CALLBACK_URL //"http://127.0.0.1:3000/auth/google/callback"
+    clientID : process.env.GOOGLE_CLIENT_ID,//"1007887171981-db9d5lqrpl5s0difp3vje5dfrsnrijmi.apps.googleusercontent.com",// //
+    clientSecret :process.env.GOOGLE_CLIENT_SECRET,//"EjaLWYKzCsEHgH6bpG97CojL",// //
+    callbackURL  :process.env.GOOGLE_CALLBACK_URL,//"http://127.0.0.1:3000/auth/google/callback",// //
 };
 passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 

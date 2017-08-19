@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env.SESSION_SECRET,//'cat',//,
     resave: true,
     saveUninitialized: true
 }));
