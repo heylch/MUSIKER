@@ -99,7 +99,7 @@ a {
   height: auto;
   padding: 200px 0;
   text-align: center;
-  color: gold;
+  color: #fffe00;
   background: url("../img/dragon.jpg") no-repeat bottom center scroll;
   background-color: black;
   -webkit-background-size: cover;
@@ -122,6 +122,11 @@ a {
       .masthead .intro-body .intro-text {
         font-size: 22px; } }
 
+.image-circle{
+  width: 30%;
+  border-radius: 50%;
+}
+
 .btn-circle {
   font-size: 26px;
   width: 55px;
@@ -139,6 +144,7 @@ a {
     color: white;
     outline: none;
     background: rgba(255, 255, 255, 0.1); }
+
 
 .content-section {
   padding-top: 150px;
