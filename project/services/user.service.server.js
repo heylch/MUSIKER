@@ -1,6 +1,7 @@
 var app = require("../../express");
 var userModel = require("../model/user.model.server");
 var playlistModel = require("../model/playlist.model.server");
+var bcrypt = require("bcrypt-nodejs");
 var multer = require('multer'); // npm install multer --save
 var upload = multer({dest: __dirname + '/../../public/avatar/upload'});
 var fs = require('fs');
@@ -11,9 +12,9 @@ passport.serializeUser(serializeUser);
 passport.deserializeUser(deserializeUser);
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var googleConfig = {
-    clientID : process.env.GOOGLE_CLIENT_ID,//"1007887171981-db9d5lqrpl5s0difp3vje5dfrsnrijmi.apps.googleusercontent.com",// //
-    clientSecret :process.env.GOOGLE_CLIENT_SECRET,//"EjaLWYKzCsEHgH6bpG97CojL",// //
-    callbackURL  :process.env.GOOGLE_CALLBACK_URL,//"http://127.0.0.1:3000/auth/google/callback",// //
+    clientID     : process.env.GOOGLE_CLIENT_ID, //"1007887171981-db9d5lqrpl5s0difp3vje5dfrsnrijmi.apps.googleusercontent.com",//,
+    clientSecret : process.env.GOOGLE_CLIENT_SECRET, //"EjaLWYKzCsEHgH6bpG97CojL",//
+    callbackURL  : process.env.GOOGLE_CALLBACK_URL//"http://127.0.0.1:3000/auth/google/callback",//
 };
 passport.use(new GoogleStrategy(googleConfig, googleStrategy));
 
@@ -28,6 +29,7 @@ app.get('/auth/google/callback',
 
 app.post("/projectapi/user", createUser);
 app.post("/projectapi/login", passport.authenticate('local'), login);
+app.post("/projectapi/logout", logout);
 app.get("/projectapi/user", findUser);
 app.get("/projectapi/user/:userId", findUserById);
 app.get("/projectapi/user/:userId/following", findFollowingByUser);
@@ -84,11 +86,17 @@ function uploadAvatar(req, res) {
 
 function createUser(req,res) {
     var user = req.body;
+    user.password = bcrypt.hashSync(user.password);
     userModel
         .createUser(user)
         .then(function (user) {
             res.json(user);
         });
+}
+
+function logout(req, res) {
+    req.logOut();
+    res.send(200);
 }
 
 function findUserById(req,res) {
@@ -275,13 +283,13 @@ function login(req, res) {
 
 function localStrategy(username, password, done) {
         userModel
-            .findUserByCredentials(username, password)
+            .findOne({"username":username})
             .then(
                     function(user) {
-                            if (!user) {
-                                    return done(null, false);
+                            if (user && bcrypt.compareSync(password, user.password)) {
+                                return done(null, user);
                                 }
-                            return done(null, user);
+                            return done(null, false);
                         },
                     function(err) {
                             if (err) {
